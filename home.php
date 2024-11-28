@@ -41,6 +41,13 @@
     <div id="webAppContent" class="mt-5 pt-3 d-none overflow-y-auto">
         <div class="container ">
     <div class="row hotel_list">
+        <!-- Loader -->
+         <div class="col-md-8 m-auto">
+            <div class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+         </div>
+         <!-- Loader Ends -->
     </div>
         </div>
     </div>
