@@ -40,73 +40,9 @@
     </div>
     <div id="webAppContent" class="mt-5 pt-3 d-none">
         <div class="container ">
-    <div class="row">
-        <div class="col-md-8 mx-auto mb-3">
-                <div class="hotel-card">
-                <!-- Hotel Information Section -->
-                <div class="hotel-info">
-                    <h3>Hotel Rudraksha <span>⭐⭐⭐</span></h3>
-                    <div class="location">Vijay Nagar</div>
-                    <div class="amenities">
-                        <span>🍽 Restaurant</span>
-                        <span>🎮 Indoor Games</span>
-                        <span>🛎 Butler Services</span>
-                    </div>
-                    <div class="features">
-                        <span>✔ Free Cancellation till check-in</span>
-                        <span>✔ Book with ₹0 Payment</span>
-                        <span>✔ Breakfast Included</span>
-                    </div>
-                </div>
-                <!-- Hotel Rating and Price -->
-                <div class="hotel-rating">
-                    <div class="rating">Very Good</div>
-                    <div class="rating-score">3.7</div>
-                    <div>(10 Ratings)</div>
-                    <div class="old-price">₹3,600</div>
-                    <div class="price">₹2,785</div>
-                    <div>+ ₹643 taxes & fees</div>
-                    <div class="book-now">Login to Book Now & Pay Later!</div>
-                </div>
-            </div>
-                <!-- Offer Section -->
-                <div class="footer-offer">
-                    Interest Free EMI Offer on Federal Bank Credit Cards. Get INR 458 Off
-                </div>
-        </div>
-        <div class="col-md-8 mx-auto mb-3">
-                <div class="hotel-card">
-                <!-- Hotel Information Section -->
-                <div class="hotel-info">
-                    <h3>Hotel Rudraksha <span>⭐⭐⭐</span></h3>
-                    <div class="location">Vijay Nagar</div>
-                    <div class="amenities">
-                        <span>🍽 Restaurant</span>
-                        <span>🎮 Indoor Games</span>
-                        <span>🛎 Butler Services</span>
-                    </div>
-                    <div class="features">
-                        <span>✔ Free Cancellation till check-in</span>
-                        <span>✔ Book with ₹0 Payment</span>
-                        <span>✔ Breakfast Included</span>
-                    </div>
-                </div>
-                <!-- Hotel Rating and Price -->
-                <div class="hotel-rating">
-                    <div class="rating">Very Good</div>
-                    <div class="rating-score">3.7</div>
-                    <div>(10 Ratings)</div>
-                    <div class="old-price">₹3,600</div>
-                    <div class="price">₹2,785</div>
-                    <div>+ ₹643 taxes & fees</div>
-                    <div class="book-now">Login to Book Now & Pay Later!</div>
-                </div>
-            </div>
-                <!-- Offer Section -->
-                <div class="footer-offer">
-                    Interest Free EMI Offer on Federal Bank Credit Cards. Get INR 458 Off
-                </div>
-        </div>
+    <div class="row hotel_list">
+        
+        
     </div>
         </div>
     </div>
@@ -128,6 +64,28 @@
                 interactiveTab.classList.remove('active');
                 webAppContent.classList.remove('d-none');
                 interactiveContent.classList.add('d-none');
+
+                $.ajax({
+                    url: "/gethotels",
+                    type: "POST",
+                    data: {},
+                    success: function(r) {
+
+                        try {
+                            // var data = $.parseJSON(r);
+                            // $('.loadingimg').hide();
+                            $('.hotel_list').html(r)
+                        }
+                        catch(err) {
+                            // $('.loadingimg').hide();
+                        }
+
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        $('.loadingimg').hide();
+                    }
+                });
+
             }
         }
 

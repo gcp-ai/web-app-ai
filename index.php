@@ -8,6 +8,11 @@ switch ($request) {
         require __DIR__ . '/getanswer.php';
         break;
 
+
+    case '/gethotels':
+        require __DIR__ . '/gethotels.php';
+        break;
+
     case '/':
         require __DIR__ . '/home.php';
         break;
