@@ -38,11 +38,9 @@
             </div>
         </div>
     </div>
-    <div id="webAppContent" class="mt-5 pt-3 d-none">
+    <div id="webAppContent" class="mt-5 pt-3 d-none overflow-y-auto">
         <div class="container ">
     <div class="row hotel_list">
-        
-        
     </div>
         </div>
     </div>
